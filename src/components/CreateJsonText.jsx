@@ -17,6 +17,11 @@ const textareaStyle = {
 
 const CreateJsonText = () => {
 
+    const { setJsonText } = useContext(DataContext);
+
+    const onValueChange = (e) => {
+        setJsonText(e.target.value);
+    }
 
     return (
         <>
@@ -25,7 +30,7 @@ const CreateJsonText = () => {
                 minRows={3}
                 maxRows={5}
                 style={textareaStyle}
-                
+                onChange={(e) => onValueChange(e)}
             />
         </>
     )
